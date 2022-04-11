@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+{% block body %}
+<body>       
+    <form action="{{url_for('volunteer.register')}}" method="POST">
+        <div class="container">   
+             <h1>Register</h1>
+            <label>Name : </label>
+            <input type="text" placeholder="Enter your name" name="name" value=''required>
+            <label>Mobile : </label>
+            <input type="integer" placeholder="Enter your mobile number" name="mobileno"value=''required>
+            <label>Email : </label>
+            <input type="email" placeholder="Enter your email" name="email"value='' required>
+            <label>Date of Birth : </label>
+            <input type="date" placeholder="Enter your dob" name="dob"value='' required>
+            <label>Username : </label>   
+            <input type="text" placeholder="Enter Username" name="u_id" value=''required>  
+            <label>Password : </label>   
+            <input type="password" placeholder="Enter Password" name="password"value='' required>  
+            <label>Re-enter password : </label>
+            <input type="password" placeholder="Re_enter Password" name="psw_repeat" value='' required>
+            <label>Student/Admin : </label>
+            <input list="users" name="usertype" placeholder="Select Usertype" id="user" required>
+            <datalist id="users">
+               <option value="Student">
+               <option value="Admin"required>
+            </datalist>
+            <label>Year of study : </label>
+            <input type="integer" placeholder="If student enter year of study" name="yearofstudy"value='' >
+            <label> Department: </label>
+            <input type="text" placeholder="If admin enter Department" name="dept"value='' >
+            <input type = 'submit'  class="btn btn-success" name = 'submit' value = 'submit'/>
+               
+        </div>   
+    </form>     
+</body
+{% endblock %}

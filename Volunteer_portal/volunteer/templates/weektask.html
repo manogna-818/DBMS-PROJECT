@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+{% block body %}
+    {% if not tasks%}
+        There are no tasks scheduled within a week. Click <a href="{{url_for('todolist.task_list')}}">here</a> for all the tasks.
+    {% else %}
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Task Description</th>
+                <th>Deadline</th>
+                <th>Status</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        {% for id, td_text, status, deadline in tasks%}
+            <tr>
+                {% if status %}
+                    <td><p><s>{{td_text}}</s></p></td>
+                {% else %}
+                    <td><p>{{td_text}}</p></td>
+                {% endif %}
+                <td>{{deadline}}</td>
+                {% if not status%}
+                    <td><a href="{{url_for('todolist.mark_task', value='week', tid=id, status=status)}}" class="btn btn-success" role="button">Mark as done</a></td>
+                {% else %}
+                    <td><a href="{{url_for('todolist.mark_task', value='week', tid=id, status=status)}}" class="btn btn-warning" role="button">Unmark</a></td>
+                {% endif %}
+                <td> <a href="{{url_for('todolist.delete_task',value='week',tid=id)}}" class="btn btn-danger" role="button">Delete</a> </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+{% endblock %}

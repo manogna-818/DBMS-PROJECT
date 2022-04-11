@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+{% block body %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet"  href="{{ url_for('static',filename='main.css')}}">
+    <style>
+        
+        .center{
+            
+            height: 50%;
+            left: 50%;
+            position: absolute;
+        
+
+        }
+        .textbox{
+            height: 10vw;
+            width: 30vw;
+        }
+
+    </style>
+</head>
+<body>
+    
+<div class="app">
+        <br>
+    <form action="{{url_for('volunteer.add_activity')}}" method="POST" >
+        <div class="container" height="900px">
+        <title>Add Activity</title>
+        <p align="right"><a href="/volunteer/login">{{userid}}</a></p>
+            <title>Add activity</title>
+             <label>Please confirm your user_id: </label>
+			<input type="text" name="userid" placeholder="Enter user_id" style="width: 25vw" required>
+            <br>
+		    <label>Title : </label>
+			<input type="text" name="title" placeholder="Enter title" style="width: 25vw" required>
+            <br>
+        <label>Description : </label>
+        <input type="text" name="description" placeholder="Enter details " class="textbox" style="width: 25vw" required>
+	<br>
+      <label>Skills required : </label>
+      <input type="text" name="skills" placeholder="Enter required skills " style="width: 25vw" required>
+      <br>
+      <label>Start Date: </label>
+      <input type="date" name="startdate" required>
+   <br>
+      <label>End Date : </label>
+      <input type="date" name="enddate" required>
+    <br>
+<br>
+      <input type = 'submit'  class="btn btn-success" name = 'submit' value = 'submit'/>
+ 
+      </div>
+		
+	</span>
+	</span>
+    </form>
+ </div>
+</body>
+</html>
+{% endblock %}

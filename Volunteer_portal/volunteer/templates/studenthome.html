@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+{% block body %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet"  href="{{ url_for('static',filename='main.css')}}">
+    </style>
+    <title>Document</title>
+</head>
+<body>
+<div class="app">
+   <nav class="navbar navbar-default">
+    <div class="container" >
+      <div class="navbar-header">
+       <h1 class="navbar-brand";style="background-color:grey;font-family:verdana;"><strong>Student Home-Page</strong></h1>
+      </div>
+       <br>
+       <br>
+        <p align="right">{{userid}}</p>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+        <li><a href="{{url_for('volunteer.view_activities_stu',userid=userid)}}"><b>Available Activities</b></a></li>
+          <li><a href="{{url_for('volunteer.view_applied_activities_stu',userid=userid)}}"><b>Applied Activities</b></a></li>
+          <li><a href="{{url_for('volunteer.selected_activities',userid=userid)}}"><b>Enrolled Activities</b></a></li>
+          <li><a href="/volunteer/login"><strong>logout</strong></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+</body>
+</html>
+{% endblock %}

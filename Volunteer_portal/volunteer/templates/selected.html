@@ -1,0 +1,36 @@
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet"  href="{{ url_for('static',filename='main.css')}}">
+    </style>
+    <title>Document</title>
+</head>
+<body>
+<div class="container2" >
+<table class="table table-hover">
+        <thead class="thead-dark">
+        <tr>
+           <th>Activity ID</th>
+            <th>Title</th>
+            <th>Application Date</th>
+        </tr> 
+        </thead>
+        {% for task in tasks %}
+        <tr>
+     <td>{{task[0]}}</td>
+            <td>{{task[1]}}</td>
+<td>{{task[2]}}</td>
+
+
+    
+    
+        </tr>
+        {% endfor %}
+
+</table
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <title>Volunteer portal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet"  href="{{ url_for('static',filename='main.css')}}">
+</head>
+<body>
+    <div class="app">
+    <h1>confirmed activies</h1>
+
+    {% if confirmed_tasks == [] %}
+
+	    <div class="alert alert-warning" role="alert">
+	    	No confirmed activities
+	    </div>
+	{% else %}
+    <div class="row">
+	    <table class="table">
+	    	<thead>
+	    		<tr>
+	    			<th scope="col">
+              
+           </th>
+	    			<th scope="col">Title</th>
+	    			<th scope="col">Details</th>
+	    			<th scope="col">Requirements</th>
+	    		</tr>  
+	    	</thead>
+	    	<tbody> 
+        {% for tasks in confirmed_tasks %}
+        <tr>
+                <th scope="row">Sl.no</th>
+                <td>{{ .title }}</td>
+            <td>{{ .details }}</td>
+            <td>{{ .requirements}}</td>
+
+            </tr>
+            </tbody>
+            </table>
+            { % endif %}
+            </div>
+            </div>
+            </body>
+            
+</html>

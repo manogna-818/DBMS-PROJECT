@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+{% block body %}
+    <form action="{{url_for('todolist.add_task')}}" method="POST">
+        <div id="myDiv">
+            <label for="new_task"></label>
+            <textarea id="new_task" name="new_task" rows="4" cols="45" placeholder="Add task description.." required></textarea><br>
+            <input type="date" id="input_date" name="input_date" required>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+    </form>
+{% endblock %}
